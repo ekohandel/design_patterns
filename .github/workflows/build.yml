@@ -1,0 +1,9 @@
+name: build
+on: [push]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    container: ekohandel/cpp
+    steps:
+      - uses: actions/checkout@v2
+      - run: mkdir build && cd build && cmake .. && make all
